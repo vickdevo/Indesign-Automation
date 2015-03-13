@@ -80,84 +80,67 @@ for (i = 0; i < _pages.length; i++) {
                 myTable=myText.convertToTable("|", "#", 4);
                 //myTable.appliedTableStyle="Tab1";
                 //myTable.cells.everyItem().paragraphs.everyItem().appliedParagraphStyle="ParA";    
-        
                    }
                     else
                     {
                         _tables = doc.stories.item(i).tables;
                         _tables1 = doc.stories.item(i+1).tables;
-               
-                                //alert ("Page :"+i+", Table :"+j);
-                                _row = _tables.item(0).rows;  
-                                 _row1 = _tables1.item(0).rows;  
-                                // alert("_row length: "+_row.length+"_row1.length: "+_row1.length);
-                                
-                                
-                                            for (k = 4; k < _row.length; k++) {
-                                                        _cell = _row.item(k).cells;
-                                                        _cell1=_row1.item(k).cells;
-                                                                    for (l = 0; l < _cell.length; l++) {
-                                                                        
-                                                                        if(_cell.length==2 || _cell.length==1)
-                                                                        {
-                                                                            if (k == 4) {
-                                                                                    str = _cell.item(l).contents;
-                                                                                    spliitedstr = str.split("M"); 
-                                                                                    str1=_cell1.item(l).contents;
-                                                                                    //newsplit = str.split(" ");
-                                                                                    splitstr=str1.split("M");
-                                                                                    //newsplit1=str.split(" ");
-                                                                                    //content += newsplit[newsplit.length-1];
-                                                                                    content += " Aetna Health Plan Options in Michigan#Continued#"+spliitedstr[0]+"|" +"     "+"|"+splitstr[0]+"#";
-                                                                                    //alert(content);
-                                                                                   }
-                                                                               else if(k==20 || k==26 || k==29){
-                                                                                   content+="|    |    |    #";
-                                                                                }
-                                                                                    else{
-                                                                                                        if(l==0){
-                                                                                                            ;
-                                                                                                        }
-                                                                                                
-                                                                                                
-                                                                                                        else
-                                                                                                        {
-                                                                                                                       str=_cell.item(l).contents;
-                                                                                                                       //alert("str:"+str);
-                                                                                                                       str1=_cell.item(l).contents;
-                                                                                                                       //alert("str1:"+str1);
-                                                                                                                       content+=str+"|"+"    "+"|"+str1+"    "+"#";
-                                                                                                        }
-                                                                                                        
-                                                                                            
-                                                                                     }   
-                                                                                    
-                                                                    
-                                                                         }
-                                                                        else
-                                                                        {
-                                                                                    if(l==1)
-                                                                                    {
-                                                                                        str=_cell.item(l).contents;
-                                                                                        str1=_cell.item(l+1).contents;
-                                                                                        str2=_cell1.item(l).contents;
-                                                                                        str3=_cell1.item(l+1).contents;
-                                                                                        content+=str+"|"+str1+"|"+str2+"|"+str3+"#";
-                                                                                     }
-                                                                                    else
-                                                                                    {
-                                                                                        ;
-                                                                                    }
-  
-                                                                         }
-                                                                                    
-                                                                //alert("K:"+k);
-                                        //content+="#";                                        
+                        //alert ("Page :"+i+", Table :"+j);
+                            _row = _tables.item(0).rows;  
+                            _row1 = _tables1.item(0).rows;  
+                        // alert("_row length: "+_row.length+"_row1.length: "+_row1.length);
+                                for (k = 4; k < _row.length; k++) {
+                                    _cell = _row.item(k).cells;
+                                    _cell1=_row1.item(k).cells;
+                                for (l = 0; l < _cell.length; l++) {
+                                    if(_cell.length==2 || _cell.length==1)
+                                        {
+                                            if (k == 4) {
+                                            str = _cell.item(l).contents;
+                                            spliitedstr = str.split("M"); 
+                                            str1=_cell1.item(l).contents;
+                                            //newsplit = str.split(" ");
+                                            splitstr=str1.split("M");
+                                            //newsplit1=str.split(" ");
+                                            //content += newsplit[newsplit.length-1];
+                                            content += " Aetna Health Plan Options in Michigan#Continued#"+spliitedstr[0]+"|" +"     "+"|"+splitstr[0]+"#";
+                                            //alert(content);
                                         }
-                           
-                        
-                        
-                    }
+                                    else if(k==20 || k==26 || k==29){
+                                        content+="|    |    |    #";
+                                        }
+                                    else {
+                                        if(l==0){
+                                                    ;
+                                                }
+                                    else {
+                                            str=_cell.item(l).contents;
+                                            //alert("str:"+str);
+                                            str1=_cell.item(l).contents;
+                                            //alert("str1:"+str1);
+                                            content+=str+"|"+"    "+"|"+str1+"    "+"#";
+                                            }
+                                        }   
+                                    }
+                                    else
+                                       {
+                                            if(l==1)
+                                        {
+                                            str=_cell.item(l).contents;
+                                            str1=_cell.item(l+1).contents;
+                                            str2=_cell1.item(l).contents;
+                                            str3=_cell1.item(l+1).contents;
+                                            content+=str+"|"+str1+"|"+str2+"|"+str3+"#";
+                                        }
+                                    else
+                                        {
+                                            ;
+                                        }
+                                      }
+                                        //alert("K:"+k);
+                                        //content+="#";                                        
+                                    }
+                                }
                 i=i+1;
                         _tables.item(0).remove();
                 _tables1.item(0).remove();
