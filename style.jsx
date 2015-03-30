@@ -21,7 +21,7 @@ for (i = 0; i < _pages.length; i++) {
                         spliitedstr = str.split("M");                  
                         newsplit = str.split(" ");
                         content += newsplit[newsplit.length-1];
-                        content += " Aetna Health Plan Options in Michigan#Compare different plans#Plan| |"+newsplit[1]+" "+spliitedstr[0];
+                        content += " TemplateOne| |"+newsplit[1]+" "+spliitedstr[0];
                         //alert(content);
                         }
                             else if (k==5) {
@@ -103,7 +103,7 @@ for (i = 0; i < _pages.length; i++) {
                                             splitstr=str1.split("M");
                                             //newsplit1=str.split(" ");
                                             //content += newsplit[newsplit.length-1];
-                                            content += " Aetna Health Plan Options in Michigan#Continued#"+spliitedstr[0]+"|" +"     "+"|"+splitstr[0]+"#";
+                                            content += " TemplateOne#Continued#"+spliitedstr[0]+"|" +"     "+"|"+splitstr[0]+"#";
                                             //alert(content);
                                         }
                                     else if(k==20 || k==26 || k==29){
